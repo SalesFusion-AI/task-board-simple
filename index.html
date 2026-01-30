@@ -267,12 +267,51 @@
                                 <h1 className="text-2xl font-bold text-gray-900">Task Board</h1>
                                 <p className="text-gray-600">Manage your tasks efficiently</p>
                             </div>
-                            <button 
-                                onClick={() => handleAddTask('todo')}
-                                className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-                            >
-                                + Add Task
-                            </button>
+                            <div className="flex space-x-3">
+                                <button 
+                                    onClick={() => {
+                                        const demoTasks = [
+                                            {
+                                                id: 'demo-1',
+                                                title: 'Sprint 1 Setup ✅',
+                                                description: 'Initial task board setup and testing',
+                                                priority: 'high',
+                                                assignee: 'Angelo',
+                                                status: 'done',
+                                                createdAt: new Date()
+                                            },
+                                            {
+                                                id: 'demo-2', 
+                                                title: 'Pipeline Bot Core Infrastructure',
+                                                description: 'Set up bot framework, Slack integration, and database schema',
+                                                priority: 'high',
+                                                assignee: 'Alfred',
+                                                status: 'in-progress',
+                                                createdAt: new Date()
+                                            },
+                                            {
+                                                id: 'demo-3',
+                                                title: 'Sales Room Chat Interface',
+                                                description: 'Build conversational sales experience for prospects',
+                                                priority: 'medium',
+                                                assignee: 'Alfred',
+                                                status: 'todo',
+                                                createdAt: new Date()
+                                            }
+                                        ];
+                                        setTasks(demoTasks);
+                                    }}
+                                    className="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                                >
+                                    📋 Demo Tasks
+                                </button>
+                                <button 
+                                    onClick={() => handleAddTask('todo')}
+                                    className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                                >
+                                    + Add Task
+                                </button>
+                            </div>
                         </div>
                     </div>
 
