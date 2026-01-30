@@ -195,7 +195,35 @@
         function TaskBoard() {
             const [tasks, setTasks] = useState(() => {
                 const saved = localStorage.getItem('task-board-tasks');
-                return saved ? JSON.parse(saved) : [];
+                return saved ? JSON.parse(saved) : [
+                    {
+                        id: 'demo-1',
+                        title: 'Sprint 1 Setup',
+                        description: 'Initial task board setup and testing',
+                        priority: 'high',
+                        assignee: 'Angelo',
+                        status: 'done',
+                        createdAt: new Date()
+                    },
+                    {
+                        id: 'demo-2', 
+                        title: 'Pipeline Bot Core Infrastructure',
+                        description: 'Set up bot framework, Slack integration, and database schema',
+                        priority: 'high',
+                        assignee: 'Alfred',
+                        status: 'in-progress',
+                        createdAt: new Date()
+                    },
+                    {
+                        id: 'demo-3',
+                        title: 'Sales Room Chat Interface',
+                        description: 'Build conversational sales experience for prospects',
+                        priority: 'medium',
+                        assignee: 'Alfred',
+                        status: 'todo',
+                        createdAt: new Date()
+                    }
+                ];
             });
             const [showForm, setShowForm] = useState(false);
             const [targetStatus, setTargetStatus] = useState('todo');
